@@ -128,6 +128,18 @@
   }
   .edit-toggle:hover{ color: var(--accent-strong); border-color: var(--accent-strong); }
   .edit-toggle.is-on{ color: var(--bg); background: var(--accent); border-color: var(--accent); }
+  .edit-toggle:disabled{ opacity: 0.6; cursor: default; }
+
+  /* generic site-text edit affordance */
+  body.edit-mode .editable{
+    cursor: text;
+    outline: 1px dashed transparent;
+    outline-offset: 4px;
+    border-radius: 2px;
+    transition: outline-color 0.2s ease, background-color 0.2s ease;
+  }
+  body.edit-mode .editable:hover{ outline-color: var(--border-strong); }
+  body.edit-mode .editable:focus{ outline: 1px dashed var(--accent); background-color: rgba(201, 162, 92, 0.08); }
 
   /* ---------- hero ---------- */
   .hero{
@@ -681,6 +693,7 @@
         <a href="#/work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button type="button" class="edit-toggle" id="adminBtn" hidden>Admin</button>
       <button type="button" class="edit-toggle" id="editToggle" hidden>Edit</button>
     </div>
   </div>
@@ -693,8 +706,8 @@
         <p class="eyebrow">Hard Surface — Environment Artist</p>
         <h1 class="hero-title">DOKU</h1>
         <div class="hero-rule"></div>
-        <p class="hero-sub">기계 구조의 정밀함과 공간이 만들어내는 분위기,<br>그 두 가지를 함께 다루는 3D 아티스트입니다.</p>
-        <p class="hero-tags">PBR Texturing · Cinematic Lighting · Game-Ready Assets</p>
+        <p class="hero-sub editable">기계 구조의 정밀함과 공간이 만들어내는 분위기, 그 두 가지를 함께 다루는 3D 아티스트입니다.</p>
+        <p class="hero-tags editable">PBR Texturing · Cinematic Lighting · Game-Ready Assets</p>
       </div>
 
       <div class="scroll-cue">Scroll<span class="scroll-line"></span></div>
@@ -709,7 +722,7 @@
         <canvas id="modelCanvas" aria-label="드래그로 회전 가능한 3D 모델 미리보기"></canvas>
         <span class="viewport-hint">Drag to Rotate</span>
       </div>
-      <p class="about-note" style="margin-top:22px;">— 절차적으로 생성한 예시 모델입니다. 실제 작업물의 렌더나 턴테이블 영상으로 교체해주세요.</p>
+      <p class="about-note editable" style="margin-top:22px;">— 절차적으로 생성한 예시 모델입니다. 실제 작업물의 렌더나 턴테이블 영상으로 교체해주세요.</p>
     </section>
 
     <section class="about" id="about">
@@ -719,26 +732,26 @@
       </div>
       <div class="about-grid">
         <div>
-          <p class="about-text">
+          <p class="about-text editable">
             기계의 구조적 논리와 공간이 만들어내는 분위기를 함께 다루는 3D 아티스트입니다.
             하드서페이스 작업에서는 실제로 작동할 법한 디테일과 웨더링을, 환경 아트에서는
             스케일과 라이팅이 만들어내는 서사를 중요하게 생각합니다. ZBrush와 Substance 기반의
             PBR 워크플로우로 게임 · 시네마틱용 에셋을 제작합니다.
           </p>
-          <p class="about-note">— 이 소개글은 예시입니다. 실제 이력과 제작 철학으로 교체해주세요.</p>
+          <p class="about-note editable">— 이 소개글은 예시입니다. 실제 이력과 제작 철학으로 교체해주세요.</p>
         </div>
         <div class="skills">
           <div class="skill-group">
             <h3>Modeling</h3>
-            <p>ZBrush, Maya, 3ds Max, Blender</p>
+            <p class="editable">ZBrush, Maya, 3ds Max, Blender</p>
           </div>
           <div class="skill-group">
             <h3>Texturing</h3>
-            <p>Substance Painter, Substance Designer</p>
+            <p class="editable">Substance Painter, Substance Designer</p>
           </div>
           <div class="skill-group">
             <h3>Render / Engine</h3>
-            <p>Marmoset Toolbag, Unreal Engine 5</p>
+            <p class="editable">Marmoset Toolbag, Unreal Engine 5</p>
           </div>
         </div>
       </div>
@@ -746,7 +759,7 @@
 
     <section class="work-teaser">
       <div class="work-teaser-inner">
-        <p>전체 작업물은 별도의 갤러리 페이지에서 카테고리별로 확인하실 수 있습니다.</p>
+        <p class="editable">전체 작업물은 별도의 갤러리 페이지에서 카테고리별로 확인하실 수 있습니다.</p>
         <a class="work-teaser-link" href="#/work">View All Work →</a>
       </div>
     </section>
@@ -763,21 +776,21 @@
       <div class="contact-grid">
         <div class="contact-primary">
           <p class="about-text" style="font-size:1.4rem; font-style:italic; font-family: var(--font-display);">DOKU</p>
-          <p class="contact-role">Hard Surface / Environment Artist</p>
+          <p class="contact-role editable">Hard Surface / Environment Artist</p>
         </div>
         <div class="contact-divider" aria-hidden="true"></div>
         <div class="contact-list">
           <div class="contact-row">
             <span class="label">Email</span>
-            <span class="value"><a href="mailto:hello@doku.artist">hello@doku.artist</a></span>
+            <span class="value"><a href="mailto:hello@doku.artist" class="editable">hello@doku.artist</a></span>
           </div>
           <div class="contact-row">
             <span class="label">ArtStation</span>
-            <span class="value"><a href="#">artstation.com/doku</a></span>
+            <span class="value"><a href="#" class="editable">artstation.com/doku</a></span>
           </div>
           <div class="contact-row">
             <span class="label">Instagram</span>
-            <span class="value"><a href="#">@doku.art</a></span>
+            <span class="value"><a href="#" class="editable">@doku.art</a></span>
           </div>
         </div>
       </div>
@@ -854,6 +867,7 @@
     var activeFilter = 'All';
 
     var editToggle = document.getElementById('editToggle');
+    var adminBtn = document.getElementById('adminBtn');
     var fileInput = document.getElementById('fileInput');
     var saveBar = document.getElementById('saveBar');
     var saveBtn = document.getElementById('saveBtn');
@@ -923,6 +937,18 @@
 
     /* ---------- edit mode + upload ---------- */
 
+    function applyGlobalEditability(){
+      document.querySelectorAll('.editable').forEach(function(el){
+        if(editMode){
+          el.setAttribute('contenteditable', 'true');
+          el.setAttribute('spellcheck', 'false');
+        } else {
+          el.removeAttribute('contenteditable');
+          el.removeAttribute('spellcheck');
+        }
+      });
+    }
+
     function applyEditAvailability(){
       if(!writable){
         editMode = false;
@@ -930,6 +956,7 @@
         editToggle.hidden = true;
         saveBar.hidden = true;
         renderGallery();
+        applyGlobalEditability();
       }
     }
 
@@ -937,12 +964,16 @@
       editMode = !editMode;
       editToggle.classList.toggle('is-on', editMode);
       document.body.classList.toggle('edit-mode', editMode);
-      if(location.hash.indexOf('#/work') !== 0){
-        location.hash = '#/work';
-      }
       renderGallery();
+      applyGlobalEditability();
       saveBar.hidden = !(editMode && dirty);
     });
+
+    document.addEventListener('input', function(e){
+      if(e.target && e.target.isContentEditable){
+        setDirty(true);
+      }
+    }, true);
 
     function saveLocalDraft(){
       try{
@@ -1162,45 +1193,174 @@
       if(gridEl) gridEl.innerHTML = '';
       var toggleEl = bodyClone.querySelector('#editToggle');
       if(toggleEl){ toggleEl.setAttribute('hidden', ''); toggleEl.classList.remove('is-on'); }
+      var adminEl = bodyClone.querySelector('#adminBtn');
+      if(adminEl) adminEl.textContent = 'Admin';
       var barEl = bodyClone.querySelector('#saveBar');
       if(barEl) barEl.setAttribute('hidden', '');
       var fileEl = bodyClone.querySelector('#fileInput');
       if(fileEl) fileEl.removeAttribute('value');
       var dataEl = bodyClone.querySelector('#project-data');
       if(dataEl) dataEl.textContent = JSON.stringify(PROJECTS).replace(/</g, '\\u003c');
+      bodyClone.querySelectorAll('.editable').forEach(function(el){
+        el.removeAttribute('contenteditable');
+        el.removeAttribute('spellcheck');
+      });
 
       return '<!doctype html><html><head>' + headHtml + '</head><body>' + bodyClone.innerHTML + '</body></html>';
     }
 
-    saveBtn.addEventListener('click', function(){
-      if(!artifactApi){
-        saveBarText.textContent = '저장 기능을 사용할 수 없습니다 (변경사항은 이 브라우저에 남아있어요)';
+    /* ---------- save: Claude artifact capability, or GitHub-token admin login ---------- */
+
+    var GITHUB_OWNER = 'DOKU-web';
+    var GITHUB_REPO = 'doku-portfolio';
+    var GITHUB_PATH = 'index.html';
+    var TOKEN_KEY = 'doku-admin-token';
+
+    function getToken(){ try{ return localStorage.getItem(TOKEN_KEY); }catch(err){ return null; } }
+    function setToken(t){
+      try{ if(t){ localStorage.setItem(TOKEN_KEY, t); } else { localStorage.removeItem(TOKEN_KEY); } }catch(err){}
+    }
+
+    function refreshAdminUI(loggedIn){
+      editToggle.hidden = !loggedIn;
+      adminBtn.textContent = loggedIn ? 'Logout' : 'Admin';
+      if(!loggedIn){
+        editMode = false;
+        document.body.classList.remove('edit-mode');
+        editToggle.classList.remove('is-on');
+        renderGallery();
+        applyGlobalEditability();
+        saveBar.hidden = true;
+      }
+    }
+
+    adminBtn.addEventListener('click', function(){
+      if(getToken()){
+        if(window.confirm('로그아웃 하시겠어요?')){
+          setToken(null);
+          refreshAdminUI(false);
+        }
         return;
       }
-      saveBtn.disabled = true;
-      saveBarText.textContent = '저장 중…';
-      artifactApi.publish(buildFullDocument()).then(function(){
-        setDirty(false);
-        try{ localStorage.removeItem(LOCAL_KEY); }catch(err){}
-        saveBtn.disabled = false;
-        saveBarText.textContent = '저장되었습니다';
-        setTimeout(function(){ if(!dirty) saveBar.hidden = true; }, 1600);
-      }).catch(function(err){
-        saveBtn.disabled = false;
-        var code = err && err.code ? err.code : 'unknown';
-        console.error('artifact publish failed:', code, err && err.message);
-        if(code === 'not_writer' || code === 'not_granted'){
-          writable = false;
-          applyEditAvailability();
-          saveBarText.textContent = '이 보기에서는 저장 권한이 없습니다 (변경사항은 이 브라우저에 남아있어요)';
-        } else if(code === 'too_large'){
-          saveBarText.textContent = '이미지 용량이 너무 큽니다 · 이미지 개수나 크기를 줄여주세요';
-        } else if(code === 'rate_limited'){
-          saveBarText.textContent = '저장이 너무 잦습니다 · 잠시 후 다시 시도해주세요';
-        } else {
-          saveBarText.textContent = '저장 실패 (' + code + ') · 변경사항은 이 브라우저에 남아있어요 · 다시 시도';
+      var token = window.prompt('GitHub Personal Access Token을 입력하세요.\n(이 저장소에 대한 쓰기 권한이 있는 fine-grained 토큰 권장)');
+      if(!token) return;
+      adminBtn.disabled = true;
+      adminBtn.textContent = '확인 중…';
+      fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO, {
+        headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github+json' }
+      }).then(function(res){
+        adminBtn.disabled = false;
+        if(!res.ok){
+          adminBtn.textContent = 'Admin';
+          window.alert('토큰이 유효하지 않거나 이 저장소에 대한 권한이 없습니다.');
+          return;
         }
+        setToken(token);
+        refreshAdminUI(true);
+        window.alert('로그인되었습니다. 상단의 Edit 버튼으로 편집을 시작할 수 있어요.');
+      }).catch(function(){
+        adminBtn.disabled = false;
+        adminBtn.textContent = 'Admin';
+        window.alert('네트워크 오류로 토큰을 확인하지 못했습니다.');
       });
+    });
+
+    function b64EncodeUnicode(str){
+      return btoa(unescape(encodeURIComponent(str)));
+    }
+
+    function saveViaGithub(){
+      var token = getToken();
+      var apiBase = 'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/' + GITHUB_PATH;
+      return fetch(apiBase, { headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github+json' } })
+        .then(function(res){
+          if(!res.ok){ var e = new Error('lookup-failed'); e.status = res.status; throw e; }
+          return res.json();
+        })
+        .then(function(current){
+          return fetch(apiBase, {
+            method: 'PUT',
+            headers: {
+              'Authorization': 'token ' + token,
+              'Accept': 'application/vnd.github+json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              message: 'Update portfolio content via admin editor',
+              content: b64EncodeUnicode(buildFullDocument()),
+              sha: current.sha
+            })
+          });
+        })
+        .then(function(res){
+          if(!res.ok){
+            return res.json().catch(function(){ return {}; }).then(function(body){
+              var e = new Error(body.message || 'save-failed');
+              e.status = res.status;
+              throw e;
+            });
+          }
+          return res.json();
+        });
+    }
+
+    saveBtn.addEventListener('click', function(){
+      if(artifactApi){
+        saveBtn.disabled = true;
+        saveBarText.textContent = '저장 중…';
+        artifactApi.publish(buildFullDocument()).then(function(){
+          setDirty(false);
+          try{ localStorage.removeItem(LOCAL_KEY); }catch(err){}
+          saveBtn.disabled = false;
+          saveBarText.textContent = '저장되었습니다';
+          setTimeout(function(){ if(!dirty) saveBar.hidden = true; }, 1600);
+        }).catch(function(err){
+          saveBtn.disabled = false;
+          var code = err && err.code ? err.code : 'unknown';
+          console.error('artifact publish failed:', code, err && err.message);
+          if(code === 'not_writer' || code === 'not_granted'){
+            writable = false;
+            applyEditAvailability();
+            saveBarText.textContent = '이 보기에서는 저장 권한이 없습니다 (변경사항은 이 브라우저에 남아있어요)';
+          } else if(code === 'too_large'){
+            saveBarText.textContent = '이미지 용량이 너무 큽니다 · 이미지 개수나 크기를 줄여주세요';
+          } else if(code === 'rate_limited'){
+            saveBarText.textContent = '저장이 너무 잦습니다 · 잠시 후 다시 시도해주세요';
+          } else {
+            saveBarText.textContent = '저장 실패 (' + code + ') · 변경사항은 이 브라우저에 남아있어요 · 다시 시도';
+          }
+        });
+        return;
+      }
+
+      if(getToken()){
+        saveBtn.disabled = true;
+        saveBarText.textContent = '저장 중… (GitHub에 커밋)';
+        saveViaGithub().then(function(){
+          setDirty(false);
+          try{ localStorage.removeItem(LOCAL_KEY); }catch(err){}
+          saveBtn.disabled = false;
+          saveBarText.textContent = '저장되었습니다 · 약 1분 뒤 사이트에 반영됩니다';
+          setTimeout(function(){ if(!dirty) saveBar.hidden = true; }, 2400);
+        }).catch(function(err){
+          saveBtn.disabled = false;
+          console.error('github save failed:', err && err.status, err && err.message);
+          if(err && err.status === 401){
+            saveBarText.textContent = '토큰이 만료되었거나 유효하지 않습니다 · 다시 로그인해주세요';
+            setToken(null);
+            refreshAdminUI(false);
+          } else if(err && err.status === 403){
+            saveBarText.textContent = '이 토큰은 저장소에 쓰기 권한이 없습니다';
+          } else if(err && err.status === 409){
+            saveBarText.textContent = '충돌이 발생했습니다 · 새로고침 후 다시 시도해주세요';
+          } else {
+            saveBarText.textContent = '저장 실패 · 변경사항은 이 브라우저에 남아있어요 · 다시 시도';
+          }
+        });
+        return;
+      }
+
+      saveBarText.textContent = '저장 기능을 사용할 수 없습니다 (변경사항은 이 브라우저에 남아있어요)';
     });
 
     /* ---------- router: home <-> work gallery ---------- */
@@ -1229,27 +1389,43 @@
     }
     window.addEventListener('hashchange', applyRoute);
 
-    /* ---------- artifact capability (owner image uploads) ---------- */
+    /* ---------- auth init: Claude artifact capability first, GitHub admin login otherwise ---------- */
 
-    function initArtifact(){
-      if(!(window.claude && typeof window.claude.use === 'function')) return;
-      window.claude.use('artifact').then(function(api){
-        if(!api) return;
-        artifactApi = api;
-        editToggle.hidden = false;
-        var draft = loadLocalDraft();
-        if(draft && Array.isArray(draft.projects) && draft.projects.length){
-          PROJECTS = draft.projects.map(normalizeProject);
-          renderGallery();
-          setDirty(true);
-          saveBarText.textContent = '이전에 저장하지 못한 변경사항을 불러왔습니다';
-        }
-      }).catch(function(){ /* capability unavailable */ });
+    function restoreLocalDraft(){
+      var draft = loadLocalDraft();
+      if(draft && Array.isArray(draft.projects) && draft.projects.length){
+        PROJECTS = draft.projects.map(normalizeProject);
+        renderGallery();
+        setDirty(true);
+        saveBarText.textContent = '이전에 저장하지 못한 변경사항을 불러왔습니다';
+      }
+    }
+
+    function initAuth(){
+      if(window.claude && typeof window.claude.use === 'function'){
+        window.claude.use('artifact').then(function(api){
+          if(api){
+            artifactApi = api;
+            editToggle.hidden = false;
+            restoreLocalDraft();
+          } else {
+            initGithubAuth();
+          }
+        }).catch(function(){ initGithubAuth(); });
+      } else {
+        initGithubAuth();
+      }
+    }
+
+    function initGithubAuth(){
+      adminBtn.hidden = false;
+      refreshAdminUI(!!getToken());
+      restoreLocalDraft();
     }
 
     renderGallery();
     applyRoute();
-    initArtifact();
+    initAuth();
   })();
 </script>
 
