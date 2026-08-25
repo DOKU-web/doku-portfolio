@@ -1,14 +1,4 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DOKU Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<style id="page-styles">
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DOKU Portfolio</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style id="page-styles">
   :root{
     --bg: #0e0d0c;
     --surface: #17140f;
@@ -675,9 +665,7 @@
     text-transform: uppercase;
     color: var(--text-faint);
   }
-</style>
-</head>
-<body>
+</style></head><body>
 
 
 <div class="vignette" aria-hidden="true"></div>
@@ -693,8 +681,8 @@
         <a href="#/work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button type="button" class="edit-toggle" id="adminBtn" hidden>Admin</button>
-      <button type="button" class="edit-toggle" id="editToggle" hidden>Edit</button>
+      <button type="button" class="edit-toggle" id="adminBtn">Admin</button>
+      <button type="button" class="edit-toggle" id="editToggle" hidden="">Edit</button>
     </div>
   </div>
 </header>
@@ -706,7 +694,7 @@
         <p class="eyebrow">Hard Surface — Environment Artist</p>
         <h1 class="hero-title">DOKU</h1>
         <div class="hero-rule"></div>
-        <p class="hero-sub editable">기계 구조의 정밀함과 공간이 만들어내는 분위기, 그 두 가지를 함께 다루는 3D 아티스트입니다.</p>
+        <p class="hero-sub editable">정밀함과 공간이 만들어내는 분위기, 그 두 가지를 함께 다루는 3D 아티스트입니다.</p>
         <p class="hero-tags editable">PBR Texturing · Cinematic Lighting · Game-Ready Assets</p>
       </div>
 
@@ -719,7 +707,7 @@
         <h2>Viewport</h2>
       </div>
       <div class="viewport-frame">
-        <canvas id="modelCanvas" aria-label="드래그로 회전 가능한 3D 모델 미리보기"></canvas>
+        <canvas id="modelCanvas" aria-label="드래그로 회전 가능한 3D 모델 미리보기" width="1137" height="639"></canvas>
         <span class="viewport-hint">Drag to Rotate</span>
       </div>
       <p class="about-note editable" style="margin-top:22px;">— 절차적으로 생성한 예시 모델입니다. 실제 작업물의 렌더나 턴테이블 영상으로 교체해주세요.</p>
@@ -738,12 +726,12 @@
             스케일과 라이팅이 만들어내는 서사를 중요하게 생각합니다. ZBrush와 Substance 기반의
             PBR 워크플로우로 게임 · 시네마틱용 에셋을 제작합니다.
           </p>
-          <p class="about-note editable">— 이 소개글은 예시입니다. 실제 이력과 제작 철학으로 교체해주세요.</p>
+          <p class="about-note editable">— DOKU</p>
         </div>
         <div class="skills">
           <div class="skill-group">
             <h3>Modeling</h3>
-            <p class="editable">ZBrush, Maya, 3ds Max, Blender</p>
+            <p class="editable">ZBrush, Maya, 3ds Max</p>
           </div>
           <div class="skill-group">
             <h3>Texturing</h3>
@@ -751,7 +739,7 @@
           </div>
           <div class="skill-group">
             <h3>Render / Engine</h3>
-            <p class="editable">Marmoset Toolbag, Unreal Engine 5</p>
+            <p class="editable">Vray, Unreal Engine 5</p>
           </div>
         </div>
       </div>
@@ -782,7 +770,7 @@
         <div class="contact-list">
           <div class="contact-row">
             <span class="label">Email</span>
-            <span class="value"><a href="mailto:hello@doku.artist" class="editable">hello@doku.artist</a></span>
+            <span class="value"><a href="mailto:hello@doku.artist" class="editable">euning97@gmail.com</a></span>
           </div>
           <div class="contact-row">
             <span class="label">ArtStation</span>
@@ -803,7 +791,7 @@
   </footer>
 </div>
 
-<div id="galleryView" class="gallery-view" hidden>
+<div id="galleryView" class="gallery-view" hidden="">
   <a class="gallery-back" href="#top">← DOKU</a>
   <div class="gallery-head">
     <h1>Selected Work</h1>
@@ -817,11 +805,11 @@
   <p class="gallery-note">— 이미지가 없는 항목은 절차적 예시 아트로 표시됩니다. 상단 <strong>Edit</strong> 버튼을 눌러 실제 렌더 이미지로 교체해보세요.</p>
 </div>
 
-<input type="file" id="fileInput" accept="image/*" hidden>
+<input type="file" id="fileInput" accept="image/*" hidden="">
 
-<div class="save-bar" id="saveBar" hidden>
-  <span id="saveBarText">저장되지 않은 변경사항이 있습니다</span>
-  <button type="button" id="saveBtn">저장하기</button>
+<div class="save-bar" id="saveBar" hidden="">
+  <span id="saveBarText">저장 중… (GitHub에 커밋)</span>
+  <button type="button" id="saveBtn" disabled="">저장하기</button>
 </div>
 
 <script id="project-data" type="application/json">[{"id":"p1","category":"Hard Surface","title":"MK.VII Scout Unit","tools":"ZBrush · Maya · Substance Painter","art":"hull","images":[]},{"id":"p2","category":"Environment","title":"Sector-9 Cargo Bay","tools":"Blender · UE5 · Substance Designer","art":"blocks","images":[]},{"id":"p3","category":"Hard Surface","title":"Field Repair Drone","tools":"ZBrush · Substance Painter","art":"orb","images":[]},{"id":"p4","category":"Environment","title":"Abandoned Refinery","tools":"Maya · UE5 · Substance Designer","art":"skyline","images":[]},{"id":"p5","category":"Hard Surface","title":"Exo-Suit Helmet","tools":"ZBrush · Marmoset Toolbag","art":"helmet","images":[]},{"id":"p6","category":"Environment","title":"Undercity Transit Hub","tools":"Blender · UE5 · Substance Painter","art":"bars","images":[]}]</script>
@@ -1583,5 +1571,6 @@
   })();
 </script>
 
-</body>
-</html>
+
+
+</body></html>
