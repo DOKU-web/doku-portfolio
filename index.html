@@ -770,7 +770,11 @@
         <div class="contact-list">
           <div class="contact-row">
             <span class="label">Email</span>
-            <span class="value"><a href="mailto:hello@doku.artist" class="editable">euning97@gmail.com</a></span>
+            <span class="value"><a href="mailto:euning97@gmail.com" class="editable" data-sync="mailto">euning97@gmail.com</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="label">Phone</span>
+            <span class="value"><a href="tel:01000000000" class="editable" data-sync="tel">010-0000-0000</a></span>
           </div>
           <div class="contact-row">
             <span class="label">ArtStation</span>
@@ -960,6 +964,11 @@
     document.addEventListener('input', function(e){
       if(e.target && e.target.isContentEditable){
         setDirty(true);
+        var syncType = e.target.getAttribute && e.target.getAttribute('data-sync');
+        if(syncType === 'mailto' || syncType === 'tel'){
+          var val = e.target.textContent.replace(/\s+/g, '').trim();
+          e.target.setAttribute('href', syncType + ':' + val);
+        }
       }
     }, true);
 
